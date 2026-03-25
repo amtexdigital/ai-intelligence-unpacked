@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Brain, SearchCheck } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -8,6 +9,16 @@ const Hero = () => {
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px]" />
 
       <div className="relative z-10 container mx-auto px-6 text-center py-20">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center justify-center gap-4 mb-6"
+        >
+          <SearchCheck className="w-10 h-10 md:w-14 md:h-14 text-primary" />
+          <Brain className="w-10 h-10 md:w-14 md:h-14 text-secondary" />
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

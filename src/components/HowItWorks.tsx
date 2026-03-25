@@ -56,67 +56,67 @@ const HowItWorks = () => {
           </p>
         </motion.div>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-secondary/40 to-primary/40" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative">
+          {/* Connecting arrows between cards on desktop */}
+          <div className="hidden md:block absolute top-1/2 left-[33.33%] w-[2px] h-0 border-t-2 border-dashed border-primary/30 -translate-y-1/2" style={{ width: 'calc(33.33% - 2rem)', left: 'calc(33.33% - 0.5rem)', top: '50%', height: 0, borderTop: '2px dashed', borderColor: 'hsl(var(--primary) / 0.3)' }} />
+          <div className="hidden md:block absolute" style={{ width: 'calc(33.33% - 2rem)', left: 'calc(66.66% - 0.5rem)', top: '50%', height: 0, borderTop: '2px dashed', borderColor: 'hsl(var(--primary) / 0.3)' }} />
 
-          <div className="flex flex-col gap-12">
-            {steps.map((step, i) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className={`relative flex flex-col md:flex-row items-center gap-6 ${
-                  i % 2 === 1 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-2 border-background z-10" />
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="relative p-6 rounded-xl border border-border bg-background hover:border-primary/30 transition-all duration-300 flex flex-col"
+            >
+              {/* Step number */}
+              <div className="absolute -top-3 left-6 bg-background px-2">
+                <span className={`font-display text-xs tracking-widest font-bold ${step.accent === 'primary' ? 'text-primary' : 'text-secondary'}`}>
+                  STEP {i + 1}
+                </span>
+              </div>
 
-                <div className="md:w-[45%] p-6 rounded-xl border border-border bg-background hover:border-primary/30 transition-all duration-300">
-                  {step.image ? (
-                    <div className="mb-4 flex items-center gap-4">
-                      <img
-                        src={step.image}
-                        alt={step.title}
-                        className="w-16 h-16 rounded-lg object-cover shadow-lg"
-                      />
-                      <div>
-                        <div className={`text-${step.accent} mb-1`}>{step.icon}</div>
-                        <div className="flex items-baseline gap-3">
-                          <span className={`font-display text-${step.accent} text-xs tracking-widest font-semibold`}>
-                            {step.time}
-                          </span>
-                          <span className="text-muted-foreground text-xs">{step.timeNote}</span>
-                        </div>
-                      </div>
+              {step.image ? (
+                <div className="mb-4 flex items-center gap-4">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-16 h-16 rounded-lg object-cover shadow-lg"
+                  />
+                  <div>
+                    <div className={`${step.accent === 'primary' ? 'text-primary' : 'text-secondary'} mb-1`}>{step.icon}</div>
+                    <div className="flex items-baseline gap-2">
+                      <span className={`font-display ${step.accent === 'primary' ? 'text-primary' : 'text-secondary'} text-xs tracking-widest font-semibold`}>
+                        {step.time}
+                      </span>
+                      <span className="text-muted-foreground text-xs">{step.timeNote}</span>
                     </div>
-                  ) : (
-                    <>
-                      <div className={`text-${step.accent} mb-3`}>{step.icon}</div>
-                      <div className="flex items-baseline gap-3 mb-2">
-                        <span className={`font-display text-${step.accent} text-xs tracking-widest font-semibold`}>
-                          {step.time}
-                        </span>
-                        <span className="text-muted-foreground text-xs">{step.timeNote}</span>
-                      </div>
-                    </>
-                  )}
-                  <h3 className="font-display text-lg font-bold tracking-wider mb-2">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{step.description}</p>
-                  <a
-                    href={step.cta.href}
-                    {...(step.cta.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className={`inline-block font-display text-xs font-semibold tracking-wider text-${step.accent} hover:underline`}
-                  >
-                    {step.cta.label} →
-                  </a>
+                  </div>
                 </div>
+              ) : (
+                <>
+                  <div className={`${step.accent === 'primary' ? 'text-primary' : 'text-secondary'} mb-3`}>{step.icon}</div>
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className={`font-display ${step.accent === 'primary' ? 'text-primary' : 'text-secondary'} text-xs tracking-widest font-semibold`}>
+                      {step.time}
+                    </span>
+                    <span className="text-muted-foreground text-xs">{step.timeNote}</span>
+                  </div>
+                </>
+              )}
 
-                <div className="hidden md:block md:w-[45%]" />
-              </motion.div>
-            ))}
-          </div>
+              <h3 className="font-display text-lg font-bold tracking-wider mb-2">{step.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">{step.description}</p>
+              <a
+                href={step.cta.href}
+                {...(step.cta.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className={`inline-block font-display text-xs font-semibold tracking-wider ${step.accent === 'primary' ? 'text-primary' : 'text-secondary'} hover:underline`}
+              >
+                {step.cta.label} →
+              </a>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
