@@ -21,7 +21,7 @@ const steps = [
     title: "PRE-SHOW PODCAST",
     description:
       "Prefer to listen? The same intel drops as a Spotify audio episode — a quick recap of the day's AI headlines and a preview of tomorrow's debate topics.",
-    cta: { label: "LISTEN ON SPOTIFY", href: "https://spotify.com", external: true },
+    cta: { label: "LISTEN ON SPOTIFY", href: "https://open.spotify.com/show/3MoVHf52PD2gUs0BskQFeo?si=zQu9bEh6Q_GVUJLk-Yh3WQ", external: true },
     accent: "secondary" as const,
     image: podcastCover,
   },
@@ -32,7 +32,7 @@ const steps = [
     title: "THE LIVE SHOW",
     description:
       "Frank & Ronnie go live on YouTube, X, and Twitch to break down the stories, share their takes, and open the floor — you can join the debate.",
-    cta: { label: "WATCH LIVE", href: "https://youtube.com", external: true },
+    cta: { label: "WATCH LIVE", href: "https://www.youtube.com/@DetectingIntelligence", external: true },
     accent: "primary" as const,
     image: null,
   },
