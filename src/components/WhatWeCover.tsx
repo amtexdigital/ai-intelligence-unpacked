@@ -26,7 +26,7 @@ const features = [
 
 const WhatWeCover = () => {
   return (
-    <section className="py-24 bg-card/50 relative">
+    <section className="py-24 relative">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ const WhatWeCover = () => {
             WHAT WE <span className="text-secondary text-glow-red">COVER</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Everything you need to stay ahead of the AI revolution in under 30 minutes a day.
+            Everything you need to stay ahead of the AI revolution — delivered nightly, debated every morning.
           </p>
         </motion.div>
 
@@ -50,7 +50,7 @@ const WhatWeCover = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-6 rounded-xl border border-border bg-background hover:border-primary/30 transition-all duration-300"
+              className="p-6 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300"
             >
               <div className="text-primary mb-4">{feature.icon}</div>
               <h3 className="font-display text-sm font-semibold mb-2 tracking-wider">{feature.title}</h3>

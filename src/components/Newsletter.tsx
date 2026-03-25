@@ -25,8 +25,11 @@ const Newsletter = () => {
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
             GET THE <span className="text-primary text-glow-cyan">DAILY BRIEF</span>
           </h2>
-          <p className="text-muted-foreground text-lg mb-10">
-            The same intelligence report — delivered to your inbox every morning before the show.
+          <p className="text-muted-foreground text-lg mb-4">
+            Every Sunday through Thursday at 11PM EST — the top AI stories, AGI progress, and the 3 debate topics for tomorrow's live show.
+          </p>
+          <p className="text-muted-foreground text-sm mb-10">
+            Read it the night before, then join Frank & Ronnie live at 9AM to hear the debate.
           </p>
 
           {submitted ? (
@@ -36,7 +39,7 @@ const Newsletter = () => {
               className="p-6 rounded-xl border border-primary/40 bg-primary/5"
             >
               <p className="font-display text-primary text-lg font-semibold">YOU'RE IN.</p>
-              <p className="text-muted-foreground mt-2">Check your inbox for the next intelligence briefing.</p>
+              <p className="text-muted-foreground mt-2">Check your inbox tonight for the next intelligence briefing.</p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
