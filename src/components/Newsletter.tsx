@@ -1,16 +1,42 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Newsletter = () => {
-  const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-    }
-  };
+  useEffect(() => {
+    // Load MailerLite universal script
+    const script = document.createElement("script");
+    script.src = "https://groot.mailerlite.com/js/w/webforms.min.js?v1f25ee4b05da360e12e228ef42c7307c";
+    script.async = true;
+    document.body.appendChild(script);
+
+    // Initialize MailerLite
+    (window as any).MailerLiteObject = "ml";
+    const ml = (window as any).ml || function (...args: any[]) {
+      ((window as any).ml.q = (window as any).ml.q || []).push(args);
+    };
+    (window as any).ml = ml;
+    ml("account", "1069438");
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  // Watch for MailerLite success state
+  useEffect(() => {
+    if (!formRef.current) return;
+    const observer = new MutationObserver(() => {
+      const successEl = formRef.current?.querySelector(".ml-form-successBody");
+      if (successEl && (successEl as HTMLElement).style.display !== "none") {
+        setSubmitted(true);
+      }
+    });
+    observer.observe(formRef.current, { subtree: true, childList: true, attributes: true });
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="newsletter" className="py-24 relative">
@@ -42,22 +68,69 @@ const Newsletter = () => {
               <p className="text-muted-foreground mt-2">Check your inbox tonight for the next intelligence briefing.</p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                className="flex-1 px-5 py-4 rounded-lg bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/60 transition-colors font-body"
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 rounded-lg bg-primary text-primary-foreground font-display text-sm font-semibold tracking-wider hover:brightness-110 transition-all"
+            <div ref={formRef} className="max-w-md mx-auto mailerlite-form-wrapper">
+              <div
+                id="mlb2-38999005"
+                className="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38999005"
               >
-                SUBSCRIBE
-              </button>
-            </form>
+                <div className="ml-form-align-center">
+                  <div className="ml-form-embedWrapper embedForm">
+                    <div className="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                      <form
+                        className="ml-block-form"
+                        action="https://assets.mailerlite.com/jsonp/1069438/forms/141820806498498498/subscribe"
+                        data-code=""
+                        method="post"
+                        target="_blank"
+                      >
+                        <div className="ml-form-formContent">
+                          <div className="ml-form-fieldRow ml-last-item">
+                            <div className="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                              <input
+                                aria-label="email"
+                                aria-required="true"
+                                type="email"
+                                name="fields[email]"
+                                placeholder="your@email.com"
+                                autoComplete="email"
+                                required
+                                className="flex-1 w-full px-5 py-4 rounded-lg bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/60 transition-colors font-body"
+                                style={{ backgroundColor: 'hsl(var(--card))', color: 'hsl(var(--foreground))', borderColor: 'hsl(var(--border))' }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <input type="hidden" name="ml-submit" value="1" />
+                        <div className="ml-form-embedSubmit">
+                          <button
+                            type="submit"
+                            className="mt-3 w-full px-8 py-4 rounded-lg bg-primary text-primary-foreground font-display text-sm font-semibold tracking-wider hover:brightness-110 transition-all"
+                          >
+                            SUBSCRIBE
+                          </button>
+                          <button
+                            disabled
+                            style={{ display: "none" }}
+                            type="button"
+                            className="loading mt-3 w-full px-8 py-4 rounded-lg bg-primary text-primary-foreground font-display text-sm font-semibold tracking-wider"
+                          >
+                            <div className="ml-form-embedSubmitLoad" />
+                            <span className="sr-only">Loading...</span>
+                          </button>
+                        </div>
+                        <input type="hidden" name="anticsrf" value="true" />
+                      </form>
+                    </div>
+                    <div className="ml-form-successBody row-success" style={{ display: "none" }}>
+                      <div className="ml-form-successContent">
+                        <h4>Thank you!</h4>
+                        <p>You have successfully joined our subscriber list.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
         </motion.div>
       </div>

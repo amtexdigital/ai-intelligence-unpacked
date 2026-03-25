@@ -82,7 +82,7 @@ const HowItWorks = () => {
                   <img
                     src={step.image}
                     alt={step.title}
-                    className="w-16 h-16 rounded-lg object-cover shadow-lg"
+                    className="w-24 h-24 rounded-lg object-cover shadow-lg"
                   />
                   <div>
                     <div className={`${step.accent === 'primary' ? 'text-primary' : 'text-secondary'} mb-1`}>{step.icon}</div>
