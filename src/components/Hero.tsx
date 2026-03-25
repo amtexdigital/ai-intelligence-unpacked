@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import showIcon from "@/assets/show-icon.png";
+import heroIcon from "@/assets/hero-icon.png";
 
 const Hero = () => {
   return (
@@ -44,9 +44,9 @@ const Hero = () => {
           className="flex items-center justify-center mb-8"
         >
           <img
-            src={showIcon}
+            src={heroIcon}
             alt="Detecting Intelligence - Brain inside magnifying glass"
-            className="w-32 h-32 md:w-48 md:h-48 rounded-2xl shadow-2xl shadow-primary/20"
+            className="w-40 h-40 md:w-56 md:h-56 drop-shadow-[0_0_30px_hsl(var(--primary)/0.4)]"
           />
         </motion.div>
 
