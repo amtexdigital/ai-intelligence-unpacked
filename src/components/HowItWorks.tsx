@@ -21,7 +21,7 @@ const steps = [
     title: "PRE-SHOW PODCAST",
     description:
       "Prefer to listen? The same intel drops as a Spotify audio episode — a quick recap of the day's AI headlines and a preview of tomorrow's debate topics.",
-    cta: { label: "LISTEN ON SPOTIFY", href: "https://spotify.com", external: true },
+    cta: { label: "LISTEN ON SPOTIFY", href: "https://open.spotify.com/show/3MoVHf52PD2gUs0BskQFeo?si=zQu9bEh6Q_GVUJLk-Yh3WQ", external: true },
     accent: "secondary" as const,
     image: podcastCover,
   },
