@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroIcon from "@/assets/hero-pixel.png";
+import heroIcon from "@/assets/hero-icon.webp";
 
 const Hero = () => {
   return (
@@ -35,34 +35,14 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="flex items-center justify-center mb-8"
+          className="flex items-center justify-center mb-10"
         >
           <img
             src={heroIcon}
-            alt="Detecting Intelligence - Pixel art brain with magnifying glass"
-            className="w-48 h-48 md:w-64 md:h-64 drop-shadow-[4px_4px_0_hsl(var(--accent))]"
+            alt="Detecting Intelligence"
+            className="w-72 h-72 md:w-96 md:h-96 drop-shadow-[4px_4px_0_hsl(var(--accent))]"
           />
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="font-display text-primary tracking-[0.2em] text-[10px] md:text-xs mb-6"
-        >
-          ▶ THE CLOCK IS TICKING ◀
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="font-display text-2xl md:text-4xl lg:text-5xl font-black tracking-tight leading-relaxed mb-6"
-        >
-          <span className="text-accent text-pixel-shadow">DETECTING</span>
-          <br />
-          <span className="text-primary">INTELLIGENCE</span>
-        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
