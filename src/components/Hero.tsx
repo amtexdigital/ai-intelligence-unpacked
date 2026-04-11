@@ -21,7 +21,7 @@ const Hero = () => {
           <img
             src={heroIcon}
             alt="Detecting Intelligence brain logo"
-            className="w-[27.5rem] h-auto md:w-[37.5rem]"
+            className="w-[27.5rem] h-auto md:w-[37.5rem] mx-auto object-contain"
           />
         </motion.div>
 
