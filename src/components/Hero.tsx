@@ -40,7 +40,7 @@ const Hero = () => {
           <img
             src={heroIcon}
             alt="Detecting Intelligence"
-            className="w-72 h-72 md:w-96 md:h-96 drop-shadow-[4px_4px_0_hsl(var(--accent))]"
+            className="w-[22rem] h-[22rem] md:w-[30rem] md:h-[30rem]"
           />
         </motion.div>
 
