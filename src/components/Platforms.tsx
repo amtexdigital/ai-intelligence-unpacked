@@ -43,10 +43,10 @@ const Platforms = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-primary text-glow-cyan">LIVE</span> EVERY WEEKDAY
+          <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
+            <span className="text-secondary">LIVE</span> EVERY WEEKDAY
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-xl font-body">
             9:00 AM EST · Monday through Friday
           </p>
         </motion.div>
@@ -63,13 +63,13 @@ const Platforms = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
               whileHover={{ y: -4 }}
-              className="group flex flex-col items-center gap-4 p-8 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-300"
+              className="group flex flex-col items-center gap-4 p-8 bg-card border-4 border-border hover:border-secondary/60 transition-all duration-300 pixel-shadow"
             >
-              <div className="text-muted-foreground group-hover:text-primary transition-colors">
+              <div className="text-muted-foreground group-hover:text-secondary transition-colors">
                 {platform.icon}
               </div>
-              <h3 className="font-display text-lg font-semibold text-foreground">{platform.name}</h3>
-              <p className="text-muted-foreground text-sm text-center">{platform.description}</p>
+              <h3 className="font-display text-[10px] font-semibold text-foreground">{platform.name}</h3>
+              <p className="text-muted-foreground text-lg font-body text-center">{platform.description}</p>
             </motion.a>
           ))}
         </div>
