@@ -21,18 +21,9 @@ const Hero = () => {
           <img
             src={heroIcon}
             alt="Detecting Intelligence brain logo"
-            className="max-w-[20rem] md:max-w-[28rem] w-full h-auto mx-auto"
+            className="max-w-[24rem] md:max-w-[34rem] w-full h-auto block mx-auto"
           />
         </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.15 }}
-          className="font-display text-foreground text-lg md:text-2xl lg:text-3xl tracking-wider mb-4"
-        >
-          DETECTING INTELLIGENCE
-        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
