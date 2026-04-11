@@ -16,14 +16,23 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="flex items-center justify-center -mb-20"
+          className="flex items-center justify-center -mb-8"
         >
           <img
             src={heroIcon}
-            alt="Detecting Intelligence"
-            className="w-[27.5rem] h-[27.5rem] md:w-[37.5rem] md:h-[37.5rem]"
+            alt="Detecting Intelligence brain logo"
+            className="w-[27.5rem] h-auto md:w-[37.5rem]"
           />
         </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="font-display text-foreground text-lg md:text-2xl lg:text-3xl tracking-wider mb-4"
+        >
+          DETECTING INTELLIGENCE
+        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
