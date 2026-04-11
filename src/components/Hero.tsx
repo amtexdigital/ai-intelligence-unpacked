@@ -10,25 +10,6 @@ const Hero = () => {
       <div className="absolute bottom-8 left-8 w-16 h-16 border-b-4 border-l-4 border-accent opacity-40" />
       <div className="absolute bottom-8 right-8 w-16 h-16 border-b-4 border-r-4 border-accent opacity-40" />
 
-      {/* Pixel decorations - left side */}
-      <div className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 flex flex-col gap-6 opacity-30">
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <div className="h-1 bg-primary" style={{ width: `${60 + i * 20}px` }} />
-            <div className="w-3 h-3 bg-primary" />
-          </div>
-        ))}
-      </div>
-
-      {/* Pixel decorations - right side */}
-      <div className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 flex flex-col gap-6 opacity-30">
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-secondary" />
-            <div className="h-1 bg-secondary" style={{ width: `${60 + i * 20}px` }} />
-          </div>
-        ))}
-      </div>
 
       <div className="relative z-10 container mx-auto px-6 text-center py-20">
         <motion.div
