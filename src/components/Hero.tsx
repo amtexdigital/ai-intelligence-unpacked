@@ -40,7 +40,7 @@ const Hero = () => {
           <img
             src={heroIcon}
             alt="Detecting Intelligence"
-            className="w-[22rem] h-[22rem] md:w-[30rem] md:h-[30rem]"
+            className="w-[27.5rem] h-[27.5rem] md:w-[37.5rem] md:h-[37.5rem]"
           />
         </motion.div>
 
