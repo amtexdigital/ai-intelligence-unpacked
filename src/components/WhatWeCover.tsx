@@ -34,10 +34,10 @@ const WhatWeCover = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            WHAT WE <span className="text-secondary text-glow-red">COVER</span>
+          <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
+            WHAT WE <span className="text-primary">COVER</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-xl font-body max-w-2xl mx-auto">
             Everything you need to stay ahead of the AI revolution — delivered nightly, debated every morning.
           </p>
         </motion.div>
@@ -50,11 +50,11 @@ const WhatWeCover = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-6 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300"
+              className="p-6 border-4 border-border bg-card hover:border-primary/60 transition-all duration-300 pixel-shadow"
             >
               <div className="text-primary mb-4">{feature.icon}</div>
-              <h3 className="font-display text-sm font-semibold mb-2 tracking-wider">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+              <h3 className="font-display text-[10px] font-semibold mb-3 tracking-wider">{feature.title}</h3>
+              <p className="text-muted-foreground text-lg font-body leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>

@@ -56,10 +56,10 @@ const LatestEpisodes = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            LATEST <span className="text-primary text-glow-cyan">EPISODES</span>
+          <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
+            LATEST <span className="text-secondary">EPISODES</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-xl font-body">
             Catch up on what you missed — or rewatch your favorites.
           </p>
         </motion.div>
@@ -67,11 +67,11 @@ const LatestEpisodes = () => {
         {loading ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="rounded-xl bg-background border border-border animate-pulse">
-                <div className="aspect-video bg-muted rounded-t-xl" />
+              <div key={i} className="bg-background border-4 border-border animate-pulse">
+                <div className="aspect-video bg-muted" />
                 <div className="p-4 space-y-2">
-                  <div className="h-4 bg-muted rounded w-3/4" />
-                  <div className="h-3 bg-muted rounded w-1/2" />
+                  <div className="h-4 bg-muted w-3/4" />
+                  <div className="h-3 bg-muted w-1/2" />
                 </div>
               </div>
             ))}
@@ -85,7 +85,7 @@ const LatestEpisodes = () => {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto mb-8"
             >
-              <div className="relative rounded-xl overflow-hidden border border-border bg-background">
+              <div className="relative overflow-hidden border-4 border-accent bg-background pixel-shadow">
                 <div className="aspect-video">
                   <iframe
                     src={`https://www.youtube.com/embed/${extractVideoId(videos[0].link)}`}
@@ -97,10 +97,10 @@ const LatestEpisodes = () => {
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-display text-sm font-semibold tracking-wider line-clamp-2">
+                  <h3 className="font-display text-[10px] font-semibold tracking-wider line-clamp-2">
                     {videos[0].title}
                   </h3>
-                  <p className="text-muted-foreground text-xs mt-1">
+                  <p className="text-muted-foreground text-lg font-body mt-1">
                     {new Date(videos[0].pubDate).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
@@ -126,7 +126,7 @@ const LatestEpisodes = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
-                      className="group rounded-xl overflow-hidden border border-border bg-background hover:border-primary/40 transition-all duration-300"
+                      className="group overflow-hidden border-4 border-border bg-background hover:border-primary/60 transition-all duration-300 pixel-shadow"
                     >
                       <div className="aspect-video relative overflow-hidden">
                         <img
@@ -136,16 +136,14 @@ const LatestEpisodes = () => {
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-background/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                          <svg className="w-12 h-12 text-primary" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
+                          <div className="w-0 h-0 border-t-[16px] border-t-transparent border-b-[16px] border-b-transparent border-l-[24px] border-l-primary" />
                         </div>
                       </div>
                       <div className="p-4">
-                        <h3 className="font-display text-xs font-semibold tracking-wider line-clamp-2 group-hover:text-primary transition-colors">
+                        <h3 className="font-display text-[8px] font-semibold tracking-wider line-clamp-2 group-hover:text-primary transition-colors">
                           {video.title}
                         </h3>
-                        <p className="text-muted-foreground text-xs mt-1">
+                        <p className="text-muted-foreground text-sm font-body mt-1">
                           {new Date(video.pubDate).toLocaleDateString("en-US", {
                             month: "short",
                             day: "numeric",
@@ -169,14 +167,14 @@ const LatestEpisodes = () => {
                 href="https://www.youtube.com/@DetectingIntelligence"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-display text-sm font-semibold tracking-wider text-primary hover:underline"
+                className="inline-flex items-center gap-2 font-display text-[10px] font-semibold tracking-wider text-secondary hover:underline"
               >
                 VIEW ALL EPISODES <ExternalLink className="w-4 h-4" />
               </a>
             </motion.div>
           </>
         ) : (
-          <p className="text-center text-muted-foreground">No episodes found. Check back soon!</p>
+          <p className="text-center text-muted-foreground font-body text-xl">No episodes found. Check back soon!</p>
         )}
       </div>
     </section>

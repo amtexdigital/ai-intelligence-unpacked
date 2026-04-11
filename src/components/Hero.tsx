@@ -1,102 +1,96 @@
 import { motion } from "framer-motion";
-import heroIcon from "@/assets/hero-icon.webp";
+import heroIcon from "@/assets/hero-pixel.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-circuit">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px]" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-pixel-grid">
+      {/* Pixel decoration corners */}
+      <div className="absolute top-8 left-8 w-16 h-16 border-t-4 border-l-4 border-accent opacity-40" />
+      <div className="absolute top-8 right-8 w-16 h-16 border-t-4 border-r-4 border-accent opacity-40" />
+      <div className="absolute bottom-8 left-8 w-16 h-16 border-b-4 border-l-4 border-accent opacity-40" />
+      <div className="absolute bottom-8 right-8 w-16 h-16 border-b-4 border-r-4 border-accent opacity-40" />
 
-      {/* Circuit wire decorations - left side */}
-      <svg className="absolute left-0 top-1/2 -translate-y-1/2 w-[200px] md:w-[300px] h-[400px] opacity-30" viewBox="0 0 300 400" fill="none">
-        <path d="M0 80 H120 L160 120 H200" stroke="hsl(var(--secondary))" strokeWidth="2" />
-        <circle cx="200" cy="120" r="4" fill="hsl(var(--secondary))" />
-        <path d="M0 140 H80 L120 180 H180" stroke="hsl(var(--secondary))" strokeWidth="2" />
-        <circle cx="180" cy="180" r="4" fill="hsl(var(--secondary))" />
-        <path d="M0 200 H100 L140 240 H220" stroke="hsl(var(--secondary))" strokeWidth="2" />
-        <circle cx="220" cy="240" r="4" fill="hsl(var(--secondary))" />
-        <path d="M0 260 H60 L100 300 H160" stroke="hsl(var(--secondary))" strokeWidth="2" />
-        <circle cx="160" cy="300" r="4" fill="hsl(var(--secondary))" />
-        <path d="M0 320 H90 L130 350 H200" stroke="hsl(var(--secondary))" strokeWidth="2" />
-        <circle cx="200" cy="350" r="4" fill="hsl(var(--secondary))" />
-      </svg>
+      {/* Pixel decorations - left side */}
+      <div className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 flex flex-col gap-6 opacity-30">
+        {[...Array(5)].map((_, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <div className="h-1 bg-primary" style={{ width: `${60 + i * 20}px` }} />
+            <div className="w-3 h-3 bg-primary" />
+          </div>
+        ))}
+      </div>
 
-      {/* Circuit wire decorations - right side */}
-      <svg className="absolute right-0 top-1/2 -translate-y-1/2 w-[200px] md:w-[300px] h-[400px] opacity-30" viewBox="0 0 300 400" fill="none">
-        <path d="M300 80 H180 L140 120 H100" stroke="hsl(var(--primary))" strokeWidth="2" />
-        <circle cx="100" cy="120" r="4" fill="hsl(var(--primary))" />
-        <path d="M300 140 H220 L180 180 H120" stroke="hsl(var(--primary))" strokeWidth="2" />
-        <circle cx="120" cy="180" r="4" fill="hsl(var(--primary))" />
-        <path d="M300 200 H200 L160 240 H80" stroke="hsl(var(--primary))" strokeWidth="2" />
-        <circle cx="80" cy="240" r="4" fill="hsl(var(--primary))" />
-        <path d="M300 260 H240 L200 300 H140" stroke="hsl(var(--primary))" strokeWidth="2" />
-        <circle cx="140" cy="300" r="4" fill="hsl(var(--primary))" />
-        <path d="M300 320 H210 L170 350 H100" stroke="hsl(var(--primary))" strokeWidth="2" />
-        <circle cx="100" cy="350" r="4" fill="hsl(var(--primary))" />
-      </svg>
+      {/* Pixel decorations - right side */}
+      <div className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 flex flex-col gap-6 opacity-30">
+        {[...Array(5)].map((_, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-secondary" />
+            <div className="h-1 bg-secondary" style={{ width: `${60 + i * 20}px` }} />
+          </div>
+        ))}
+      </div>
 
       <div className="relative z-10 container mx-auto px-6 text-center py-20">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="flex items-center justify-center mb-8"
         >
           <img
             src={heroIcon}
-            alt="Detecting Intelligence - Brain inside magnifying glass"
-            className="w-40 h-40 md:w-56 md:h-56 drop-shadow-[0_0_30px_hsl(var(--primary)/0.4)]"
+            alt="Detecting Intelligence - Pixel art brain with magnifying glass"
+            className="w-48 h-48 md:w-64 md:h-64 drop-shadow-[4px_4px_0_hsl(var(--accent))]"
           />
         </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-display text-secondary tracking-[0.3em] text-sm md:text-base mb-4 text-glow-red"
+          transition={{ duration: 0.4 }}
+          className="font-display text-primary tracking-[0.2em] text-[10px] md:text-xs mb-6"
         >
-          THE CLOCK IS TICKING.
+          ▶ THE CLOCK IS TICKING ◀
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-6"
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="font-display text-2xl md:text-4xl lg:text-5xl font-black tracking-tight leading-relaxed mb-6"
         >
-          <span className="text-foreground">DETECTING</span>
+          <span className="text-accent text-pixel-shadow">DETECTING</span>
           <br />
-          <span className="text-primary text-glow-cyan">INTELLIGENCE</span>
+          <span className="text-primary">INTELLIGENCE</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="font-body text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed"
+          transition={{ duration: 0.4, delay: 0.3 }}
+          className="font-body text-foreground text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Your daily AI intelligence briefing. Newsletter & podcast drop at{" "}
-          <span className="text-secondary font-semibold whitespace-nowrap">11PM EST</span>, then
+          <span className="text-primary font-semibold whitespace-nowrap">11PM EST</span>, then
           Frank & Ronnie go live to debate the stories at{" "}
-          <span className="text-primary font-semibold whitespace-nowrap">9AM EST</span> — every weekday.
+          <span className="text-secondary font-semibold whitespace-nowrap">9AM EST</span> — every weekday.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
             href="#newsletter"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-display text-sm font-semibold tracking-wider hover:brightness-110 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-display text-[10px] md:text-xs tracking-wider pixel-shadow-pink hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
           >
             GET THE NEWSLETTER
           </a>
           <a
             href="#how-it-works"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-primary/40 text-primary font-display text-sm font-semibold tracking-wider hover:bg-primary/10 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 border-4 border-accent text-accent font-display text-[10px] md:text-xs tracking-wider pixel-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
           >
             HOW IT WORKS
           </a>
