@@ -16,7 +16,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="flex items-center justify-center -mb-6 md:-mb-10"
+          className="flex items-center justify-center -mb-10 md:-mb-14"
         >
           <img
             src={heroIcon}
