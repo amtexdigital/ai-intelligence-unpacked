@@ -103,25 +103,9 @@
 
   .bg-circuit {
     background-color: hsl(var(--background));
-    background-image:
-      /* Horizontal traces */
-      linear-gradient(0deg, transparent 15px, hsl(var(--circuit)) 15px, hsl(var(--circuit)) 16px, transparent 16px),
-      linear-gradient(0deg, transparent 47px, hsl(var(--circuit)) 47px, hsl(var(--circuit)) 48px, transparent 48px),
-      linear-gradient(0deg, transparent 79px, hsl(var(--circuit)) 79px, hsl(var(--circuit)) 80px, transparent 80px),
-      /* Vertical traces */
-      linear-gradient(90deg, transparent 31px, hsl(var(--circuit)) 31px, hsl(var(--circuit)) 32px, transparent 32px),
-      linear-gradient(90deg, transparent 63px, hsl(var(--circuit)) 63px, hsl(var(--circuit)) 64px, transparent 64px),
-      linear-gradient(90deg, transparent 95px, hsl(var(--circuit)) 95px, hsl(var(--circuit)) 96px, transparent 96px),
-      /* Nodes / solder points */
-      radial-gradient(circle 3px at 32px 16px, hsl(var(--circuit)) 2px, transparent 2px),
-      radial-gradient(circle 3px at 64px 48px, hsl(var(--circuit)) 2px, transparent 2px),
-      radial-gradient(circle 3px at 96px 80px, hsl(var(--circuit)) 2px, transparent 2px),
-      radial-gradient(circle 3px at 32px 48px, hsl(var(--circuit)) 2px, transparent 2px),
-      radial-gradient(circle 3px at 64px 80px, hsl(var(--circuit)) 2px, transparent 2px),
-      radial-gradient(circle 3px at 96px 16px, hsl(var(--circuit)) 2px, transparent 2px),
-      radial-gradient(circle 2px at 32px 80px, hsl(var(--circuit)) 1.5px, transparent 1.5px),
-      radial-gradient(circle 2px at 64px 16px, hsl(var(--circuit)) 1.5px, transparent 1.5px),
-      radial-gradient(circle 2px at 96px 48px, hsl(var(--circuit)) 1.5px, transparent 1.5px);
-    background-size: 128px 96px;
+    background-image: url('/images/circuit-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 }
