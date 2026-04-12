@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="absolute bottom-4 right-4 w-12 h-12 border-b-4 border-r-4 border-accent opacity-40" />
 
 
-      <div className="relative z-10 container mx-auto px-6 text-center py-1 md:py-2">
+      <div className="relative z-10 container mx-auto px-6 text-center pt-0 pb-1 md:pb-2">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
