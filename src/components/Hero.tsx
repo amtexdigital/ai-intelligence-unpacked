@@ -3,7 +3,7 @@ import heroIcon from "@/assets/hero-icon.png";
 
 const Hero = () => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden">
+    <section className="relative flex items-center justify-center overflow-hidden bg-pixel-grid">
       {/* Pixel decoration corners */}
       <div className="absolute top-4 left-4 w-12 h-12 border-t-4 border-l-4 border-accent opacity-40" />
       <div className="absolute top-4 right-4 w-12 h-12 border-t-4 border-r-4 border-accent opacity-40" />

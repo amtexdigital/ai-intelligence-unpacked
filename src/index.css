@@ -6,41 +6,40 @@
 
 @layer base {
   :root {
-    --background: 220 60% 12%;
-    --foreground: 180 60% 85%;
+    --background: 50 33% 96%;
+    --foreground: 270 30% 15%;
 
-    --card: 220 50% 16%;
-    --card-foreground: 180 60% 85%;
+    --card: 50 30% 92%;
+    --card-foreground: 270 30% 15%;
 
-    --popover: 220 50% 16%;
-    --popover-foreground: 180 60% 85%;
+    --popover: 50 30% 92%;
+    --popover-foreground: 270 30% 15%;
 
     --primary: 330 60% 65%;
-    --primary-foreground: 220 60% 10%;
+    --primary-foreground: 270 30% 15%;
 
     --secondary: 210 70% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 40% 20%;
-    --muted-foreground: 200 20% 55%;
+    --muted: 50 20% 88%;
+    --muted-foreground: 270 10% 45%;
 
-    --accent: 180 50% 45%;
-    --accent-foreground: 220 60% 10%;
+    --accent: 270 40% 35%;
+    --accent-foreground: 50 33% 96%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 200 30% 25%;
-    --input: 200 30% 25%;
-    --ring: 180 50% 45%;
+    --border: 270 20% 75%;
+    --input: 270 20% 75%;
+    --ring: 330 60% 65%;
 
     --radius: 0px;
 
     --pixel-pink: 330 60% 65%;
-    --pixel-purple: 270 40% 45%;
+    --pixel-purple: 270 40% 35%;
     --pixel-blue: 210 70% 50%;
     --pixel-brown: 25 50% 35%;
-    --circuit: 200 40% 20%;
 
     --font-display: 'Press Start 2P', monospace;
     --font-body: 'VT323', monospace;
@@ -99,13 +98,5 @@
       linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px),
       linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px);
     background-size: 16px 16px;
-  }
-
-  .bg-circuit {
-    background-color: hsl(var(--background));
-    background-image: url('/images/circuit-bg.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
   }
 }
