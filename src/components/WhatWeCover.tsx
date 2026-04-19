@@ -35,7 +35,7 @@ const WhatWeCover = () => {
           className="text-center mb-16"
         >
           <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
-            WHAT WE <span className="text-primary">COVER</span>
+            WHAT WE <span className="neon-text-cyan">COVER</span>
           </h2>
           <p className="text-muted-foreground text-xl font-body max-w-2xl mx-auto">
             Everything you need to stay ahead of the AI revolution — delivered nightly, debated every morning.
@@ -50,9 +50,9 @@ const WhatWeCover = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-6 border-4 border-border bg-card hover:border-primary/60 transition-all duration-300 pixel-shadow"
+              className="p-6 border-2 border-border bg-card/70 backdrop-blur-sm hover:border-secondary transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--neon-cyan)/0.5)]"
             >
-              <div className="text-primary mb-4">{feature.icon}</div>
+              <div className="neon-text-magenta mb-4">{feature.icon}</div>
               <h3 className="font-display text-[10px] font-semibold mb-3 tracking-wider">{feature.title}</h3>
               <p className="text-muted-foreground text-lg font-body leading-relaxed">{feature.description}</p>
             </motion.div>

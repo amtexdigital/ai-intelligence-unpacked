@@ -1,57 +1,66 @@
 import { motion } from "framer-motion";
-import heroIcon from "@/assets/hero-icon.png";
+import heroCyberpunk from "@/assets/hero-cyberpunk.png";
 
 const Hero = () => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden">
-      {/* Pixel decoration corners */}
-      <div className="absolute top-4 left-4 w-12 h-12 border-t-4 border-l-4 border-accent opacity-40" />
-      <div className="absolute top-4 right-4 w-12 h-12 border-t-4 border-r-4 border-accent opacity-40" />
-      <div className="absolute bottom-4 left-4 w-12 h-12 border-b-4 border-l-4 border-accent opacity-40" />
-      <div className="absolute bottom-4 right-4 w-12 h-12 border-b-4 border-r-4 border-accent opacity-40" />
+    <section className="relative flex items-center justify-center overflow-hidden bg-binary">
+      {/* Neon corner brackets */}
+      <div className="absolute top-4 left-4 w-14 h-14 border-t-2 border-l-2 border-secondary shadow-[0_0_12px_hsl(var(--secondary)/0.6)]" />
+      <div className="absolute top-4 right-4 w-14 h-14 border-t-2 border-r-2 border-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)]" />
+      <div className="absolute bottom-4 left-4 w-14 h-14 border-b-2 border-l-2 border-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)]" />
+      <div className="absolute bottom-4 right-4 w-14 h-14 border-b-2 border-r-2 border-secondary shadow-[0_0_12px_hsl(var(--secondary)/0.6)]" />
 
-
-      <div className="relative z-10 container mx-auto px-6 text-center pt-0 pb-1 md:pb-2">
+      <div className="relative z-10 container mx-auto px-6 text-center pt-10 pb-12 md:pt-16 md:pb-20">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="flex items-center justify-center -mb-10 md:-mb-14"
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex items-center justify-center mb-6"
         >
           <img
-            src={heroIcon}
-            alt="Detecting Intelligence brain logo"
-            className="max-w-[24rem] md:max-w-[34rem] w-full h-auto block mx-auto"
+            src={heroCyberpunk}
+            alt="Detecting Intelligence — cyberpunk pixel brain with magnifying glass"
+            className="max-w-[20rem] md:max-w-[28rem] w-full h-auto block mx-auto drop-shadow-[0_0_30px_hsl(var(--neon-purple)/0.6)]"
           />
         </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          data-text="DETECTING INTELLIGENCE"
+          className="glitch font-display text-base sm:text-xl md:text-3xl tracking-widest mb-6 inline-block"
+        >
+          DETECTING INTELLIGENCE
+        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-          className="font-body text-foreground text-xl md:text-2xl max-w-2xl mx-auto mb-6 leading-relaxed"
+          transition={{ duration: 0.4, delay: 0.35 }}
+          className="font-body text-foreground text-xl md:text-2xl max-w-2xl mx-auto mb-8 leading-relaxed"
         >
           Your daily AI intelligence briefing. Newsletter & podcast drop at{" "}
-          <span className="text-primary font-semibold whitespace-nowrap">11PM EST</span>, then
+          <span className="neon-text-magenta font-semibold whitespace-nowrap">11PM EST</span>, then
           Frank & Ronnie go live to debate the stories at{" "}
-          <span className="text-secondary font-semibold whitespace-nowrap">9AM EST</span> — every weekday.
+          <span className="neon-text-cyan font-semibold whitespace-nowrap">9AM EST</span> — every weekday.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-5 justify-center"
         >
           <a
             href="#newsletter"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-display text-[10px] md:text-xs tracking-wider pixel-shadow-pink hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-display text-[10px] md:text-xs tracking-wider neon-shadow-magenta hover:translate-y-[-2px] transition-all"
           >
             GET THE NEWSLETTER
           </a>
           <a
             href="#how-it-works"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 border-4 border-accent text-accent font-display text-[10px] md:text-xs tracking-wider pixel-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-secondary font-display text-[10px] md:text-xs tracking-wider neon-shadow-cyan hover:translate-y-[-2px] transition-all"
           >
             HOW IT WORKS
           </a>
