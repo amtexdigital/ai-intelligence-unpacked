@@ -51,9 +51,14 @@ const colorMap = {
   },
 };
 
+const shadowMap = {
+  primary: "neon-shadow-magenta",
+  secondary: "neon-shadow-cyan",
+} as const;
+
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-card/50 relative">
+    <section id="how-it-works" className="py-24 bg-card/30 relative border-y border-border/40">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,7 +67,7 @@ const HowItWorks = () => {
           className="text-center mb-16"
         >
           <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
-            HOW IT <span className="text-primary">WORKS</span>
+            HOW IT <span className="neon-text-magenta">WORKS</span>
           </h2>
           <p className="text-muted-foreground text-xl font-body max-w-2xl mx-auto">
             A three-step daily cycle that keeps you ahead of the AI revolution.
@@ -89,7 +94,7 @@ const HowItWorks = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className={`relative p-6 bg-background border-4 border-border hover:border-primary/60 transition-all duration-300 flex flex-col pixel-shadow`}
+                className={`relative p-6 bg-card/80 backdrop-blur-sm border-2 border-border hover:border-primary/60 transition-all duration-300 flex flex-col ${shadowMap[step.color]}`}
               >
                 {/* Step number pixel badge */}
                 <div className={`absolute -top-4 left-4 ${colors.bg} px-3 py-1`}>

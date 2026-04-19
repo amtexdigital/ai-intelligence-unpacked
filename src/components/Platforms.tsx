@@ -44,7 +44,7 @@ const Platforms = () => {
           className="text-center mb-16"
         >
           <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
-            <span className="text-secondary">LIVE</span> EVERY WEEKDAY
+            <span className="neon-text-cyan">LIVE</span> EVERY WEEKDAY
           </h2>
           <p className="text-muted-foreground text-xl font-body">
             9:00 AM EST · Monday through Friday
@@ -63,7 +63,7 @@ const Platforms = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
               whileHover={{ y: -4 }}
-              className="group flex flex-col items-center gap-4 p-8 bg-card border-4 border-border hover:border-secondary/60 transition-all duration-300 pixel-shadow"
+              className="group flex flex-col items-center gap-4 p-8 bg-card/70 backdrop-blur-sm border-2 border-border hover:border-secondary transition-all duration-300 hover:shadow-[0_0_24px_hsl(var(--neon-cyan)/0.55)]"
             >
               <div className="text-muted-foreground group-hover:text-secondary transition-colors">
                 {platform.icon}

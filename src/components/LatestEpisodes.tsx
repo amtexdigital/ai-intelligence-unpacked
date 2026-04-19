@@ -48,7 +48,7 @@ const LatestEpisodes = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-card/50 relative">
+    <section className="py-24 bg-card/30 relative border-y border-border/40">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ const LatestEpisodes = () => {
           className="text-center mb-16"
         >
           <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
-            LATEST <span className="text-secondary">EPISODES</span>
+            LATEST <span className="neon-text-cyan">EPISODES</span>
           </h2>
           <p className="text-muted-foreground text-xl font-body">
             Catch up on what you missed — or rewatch your favorites.
