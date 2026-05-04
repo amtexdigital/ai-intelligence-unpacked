@@ -44,13 +44,13 @@ const Newsletter = () => {
           className="max-w-2xl mx-auto text-center"
         >
           <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
-            GET THE <span className="neon-text-magenta">DAILY BRIEF</span>
+            JOIN THE <span className="neon-text-magenta">NEWSLETTER</span>
           </h2>
           <p className="text-muted-foreground text-xl font-body mb-4">
-            Every Sunday through Thursday at 11PM EST — the top AI stories, AGI progress, and the 3 debate topics for tomorrow's live show.
+            The week's top signals across human, non-human, and artificial intelligence — plus the questions Frank & Ronnie will debate live on Friday.
           </p>
           <p className="text-muted-foreground text-lg font-body mb-10">
-            Read it the night before, then join Frank & Ronnie live at 9AM to hear the debate.
+            One email a week. No noise. Unsubscribe anytime.
           </p>
 
           {submitted ? (
