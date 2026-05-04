@@ -7,7 +7,7 @@ const Footer = () => {
           DETECTING INTELLIGENCE © {new Date().getFullYear()}
         </p>
         <p className="text-muted-foreground text-lg font-body mt-2">
-          Live weekdays at 9AM EST on YouTube, X & Twitch
+          Live every Friday at 9AM ET — human, non-human, and artificial intelligence, decoded.
         </p>
       </div>
     </footer>
