@@ -20,14 +20,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/episodes" element={<Episodes />} />
-          <Route path="/episodes/:videoId" element={<EpisodeDetail />} />
-          <Route path="/frontiers" element={<Frontiers />} />
-          <Route path="/signals" element={<Signals />} />
-          <Route path="/submit" element={<Submit />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Index />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
