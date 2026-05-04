@@ -44,10 +44,10 @@ const Platforms = () => {
           className="text-center mb-16"
         >
           <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
-            <span className="neon-text-cyan">LIVE</span> EVERY WEEKDAY
+            WATCH <span className="neon-text-cyan">LIVE</span> FRIDAYS
           </h2>
           <p className="text-muted-foreground text-xl font-body">
-            9:00 AM EST · Monday through Friday
+            9:00 AM ET · Every Friday
           </p>
         </motion.div>
 
