@@ -14,16 +14,123 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      intelligence_signals: {
+        Row: {
+          category: Database["public"]["Enums"]["signal_category"]
+          created_at: string
+          id: string
+          published_at: string
+          source_name: string | null
+          source_url: string | null
+          summary: string
+          title: string
+        }
+        Insert: {
+          category: Database["public"]["Enums"]["signal_category"]
+          created_at?: string
+          id?: string
+          published_at?: string
+          source_name?: string | null
+          source_url?: string | null
+          summary: string
+          title: string
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["signal_category"]
+          created_at?: string
+          id?: string
+          published_at?: string
+          source_name?: string | null
+          source_url?: string | null
+          summary?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      signal_submissions: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          source_url: string | null
+          status: string
+          submission_type: Database["public"]["Enums"]["submission_type"]
+          submitter_email: string | null
+          submitter_name: string | null
+          title: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          source_url?: string | null
+          status?: string
+          submission_type: Database["public"]["Enums"]["submission_type"]
+          submitter_email?: string | null
+          submitter_name?: string | null
+          title: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          source_url?: string | null
+          status?: string
+          submission_type?: Database["public"]["Enums"]["submission_type"]
+          submitter_email?: string | null
+          submitter_name?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "moderator" | "user"
+      signal_category:
+        | "human_signal"
+        | "nhi_signal"
+        | "agi_signal"
+        | "weird_signal"
+        | "false_signal"
+      submission_type:
+        | "uap_story"
+        | "ai_breakthrough"
+        | "cognition_research"
+        | "weird_observation"
+        | "host_question"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +257,22 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "moderator", "user"],
+      signal_category: [
+        "human_signal",
+        "nhi_signal",
+        "agi_signal",
+        "weird_signal",
+        "false_signal",
+      ],
+      submission_type: [
+        "uap_story",
+        "ai_breakthrough",
+        "cognition_research",
+        "weird_observation",
+        "host_question",
+      ],
+    },
   },
 } as const
