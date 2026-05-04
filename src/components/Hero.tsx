@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import heroCyberpunk from "@/assets/hero-cyberpunk.png";
+import { Radio, Mail, Send } from "lucide-react";
+import heroImg from "@/assets/hero-detecting-intelligence.png";
 
 const Hero = () => {
   return (
@@ -10,17 +11,19 @@ const Hero = () => {
       <div className="absolute bottom-4 left-4 w-14 h-14 border-b-2 border-l-2 border-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)]" />
       <div className="absolute bottom-4 right-4 w-14 h-14 border-b-2 border-r-2 border-secondary shadow-[0_0_12px_hsl(var(--secondary)/0.6)]" />
 
-      <div className="relative z-10 container mx-auto px-6 text-center pt-10 pb-12 md:pt-16 md:pb-20">
+      <div className="relative z-10 container mx-auto px-6 text-center pt-10 pb-12 md:pt-14 md:pb-20">
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex items-center justify-center mb-6"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex items-center justify-center mb-8"
         >
           <img
-            src={heroCyberpunk}
-            alt="Detecting Intelligence — cyberpunk pixel brain with magnifying glass"
-            className="max-w-[20rem] md:max-w-[28rem] w-full h-auto block mx-auto drop-shadow-[0_0_30px_hsl(var(--neon-purple)/0.6)]"
+            src={heroImg}
+            alt="Detecting Intelligence — pixel-art hosts in a neon cyberpunk city, examining a glowing brain"
+            width={1024}
+            height={1024}
+            className="max-w-[22rem] md:max-w-[30rem] w-full h-auto block mx-auto drop-shadow-[0_0_30px_hsl(var(--neon-purple)/0.6)]"
           />
         </motion.div>
 
@@ -29,40 +32,49 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
           data-text="DETECTING INTELLIGENCE"
-          className="glitch font-display text-base sm:text-xl md:text-3xl tracking-widest mb-6 inline-block"
+          className="glitch font-display text-base sm:text-xl md:text-3xl tracking-widest mb-5 inline-block"
         >
           DETECTING INTELLIGENCE
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.35 }}
-          className="font-body text-foreground text-xl md:text-2xl max-w-2xl mx-auto mb-8 leading-relaxed"
+          transition={{ duration: 0.4, delay: 0.3 }}
+          className="font-body text-foreground/90 text-xl md:text-2xl max-w-2xl mx-auto mb-10 italic leading-relaxed"
         >
-          Your daily AI intelligence briefing. Newsletter & podcast drop at{" "}
-          <span className="neon-text-magenta font-semibold whitespace-nowrap">11PM EST</span>, then
-          Frank & Ronnie go live to debate the stories at{" "}
-          <span className="neon-text-cyan font-semibold whitespace-nowrap">9AM EST</span> — every weekday.
+          Human intelligence. <span className="neon-text-cyan not-italic">Non-human intelligence.</span>{" "}
+          <span className="neon-text-magenta not-italic">Artificial general intelligence.</span>
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-5 justify-center"
+          transition={{ duration: 0.4, delay: 0.45 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center max-w-3xl mx-auto"
         >
           <a
-            href="#newsletter"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-display text-[10px] md:text-xs tracking-wider neon-shadow-magenta hover:translate-y-[-2px] transition-all"
+            href="https://youtube.com/@detectingintelligence"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground font-display text-[10px] md:text-xs tracking-wider neon-shadow-magenta hover:translate-y-[-2px] transition-all"
           >
-            GET THE NEWSLETTER
+            <Radio className="w-4 h-4" />
+            WATCH LIVE FRIDAYS
           </a>
           <a
-            href="#how-it-works"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-secondary font-display text-[10px] md:text-xs tracking-wider neon-shadow-cyan hover:translate-y-[-2px] transition-all"
+            href="#newsletter"
+            className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-transparent text-secondary font-display text-[10px] md:text-xs tracking-wider neon-shadow-cyan hover:translate-y-[-2px] transition-all"
           >
-            HOW IT WORKS
+            <Mail className="w-4 h-4" />
+            JOIN THE NEWSLETTER
+          </a>
+          <a
+            href="#submit"
+            className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-transparent text-accent font-display text-[10px] md:text-xs tracking-wider neon-shadow-purple hover:translate-y-[-2px] transition-all"
+          >
+            <Send className="w-4 h-4" />
+            SUBMIT A SIGNAL
           </a>
         </motion.div>
       </div>
